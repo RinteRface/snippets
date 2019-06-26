@@ -1,0 +1,15 @@
+snippet bs4DashApp
+	library(shiny)
+	library(bs4Dash)
+	library(shinyWidgets)
+
+	shinyApp(
+		ui = bs4DashPage(
+		 navbar = bs4DashNavbar(),
+		 body = bs4DashBody(),
+		 sidebar = bs4DashSidebar(),
+		 controlbar = bs4DashControlbar(),
+		 footer = bs4DashFooter()
+		),
+		server = function(input, output, session) {}
+	)
