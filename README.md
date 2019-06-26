@@ -1,5 +1,5 @@
 # snippets
-> RStudio snippets for all Interface packages. 
+> RStudio snippets for all RinteRface packages. 
 
 ## Installation
 Copy and paste the snippet of your choice to your RStudio editor. Alternatively, download them with the [snipper](https://github.com/dgrtwo/snippr) package:
