@@ -2,14 +2,90 @@ snippet bs4DashApp
 	library(shiny)
 	library(bs4Dash)
 	library(shinyWidgets)
+	library(shinyEffects)
 
 	shinyApp(
 		ui = bs4DashPage(
-		 navbar = bs4DashNavbar(),
-		 body = bs4DashBody(),
-		 sidebar = bs4DashSidebar(),
-		 controlbar = bs4DashControlbar(),
-		 footer = bs4DashFooter()
+			sidebar_collapsed = ${1:TRUE or FALSE},
+		  controlbar_collapsed = ${2:TRUE or FALSE},
+		  enable_preloader = ${3:TRUE or FALSE},
+		  loading_duration = ${4: 2},
+		 	navbar = bs4DashNavbar(skin = ${5:"light or dark"}),
+		 	body = bs4DashBody(),
+		 	sidebar = bs4DashSidebar(skin = ${6:"light or dark"}),
+		 	controlbar = bs4DashControlbar(skin = ${7:"light or dark"}),
+		 	footer = bs4DashFooter()
 		),
 		server = function(input, output, session) {}
 	)
+	
+
+snippet shinydashboardPlusApp
+	library(shiny)
+	library(shinydashboard)
+	library(shinydashboardPlus)
+	library(shinyWidgets)
+	library(shinyEffects)
+
+	shinyApp(
+		ui = dashboardPagePlus(
+			md = ${1:style (TRUE or FALSE)},
+			skin = ${2:choose in the list},
+  		enable_preloader = ${3:TRUE or FALSE},
+		  loading_duration = ${4: 2},
+		  collapse_sidebar = ${5: TRUE or FALSE},
+		  sidebar_fullCollapse = ${6: TRUE or FALSE}
+			navbar = dashboardHeaderPlus(
+				enable_rightsidebar = ${7:TRUE or FALSE},
+				title = "ShinydashboardPlus App"
+			),
+			body = dashboardBody(),
+			sidebar = dashboardSidebar(),
+			controlbar = rightSidebar(background = ${8:"light or dark"}),
+			footer = dashboardFooter()
+		),
+		server = function(input, output, session) {}
+	)
+	
+	
+snippet tablerDashApp
+	library(shiny)
+ 	library(tablerDash)
+ 	library(shinyWidgets)
+
+ 	shiny::shinyApp(
+	  ui = tablerDashPage(
+	  	enable_preloader = ${1: TRUE or FALSE}, 
+	  	loading_duration = ${2: 2},
+	 		title = "Tabler App",
+	 		navbar = tablerDashNav(id = "navbar"),
+	 		footer = tablerDashFooter(copyrights = "Yourself"),
+	 		body = tablerDashBody()
+	  ),
+	  server = function(input, output) {}
+ 	)
+ 	
+ 	
+snippet argonDash
+	library(shiny)
+	library(argonR)
+ 	library(argonDash)
+
+  shiny::shinyApp(
+    ui = argonDashPage(
+    	title = "Argon App", 
+    	description = "Your description", 
+    	author = "You",
+  		navbar = argonDashNavbar(), 
+  		sidebar = argonDashSidebar(
+  			id = "sidebar", 
+  			side = "left",
+  			size = "md", 
+  			skin = "light"
+  		), 
+  		header = argonDashHeader(), 
+  		body = argonDashBody(),
+  	  footer = argonDashFooter(copyrights = "Yourself")
+    ),
+    server = function(input, output) {}
+  )
