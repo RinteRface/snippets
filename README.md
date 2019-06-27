@@ -10,4 +10,10 @@ library(snippr)
 snippets_install_github("RinteRface/snippets", language = "r")
 ```
 
+![](images/snippet_1.png)
+<br>
+<br>
+<br>
+![](images/snippet_2.png)
+
 
