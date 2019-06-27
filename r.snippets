@@ -66,7 +66,7 @@ snippet tablerDashApp
  	)
  	
  	
-snippet argonDash
+snippet argonDashApp
 	library(shiny)
 	library(argonR)
  	library(argonDash)
@@ -79,9 +79,10 @@ snippet argonDash
   		navbar = argonDashNavbar(), 
   		sidebar = argonDashSidebar(
   			id = "sidebar", 
-  			side = "left",
-  			size = "md", 
-  			skin = "light"
+  			side = ${1:"left or right"},
+  			size = ${2:"s, md or lg"}, 
+  			skin = ${3:"light or dark"},
+  			background = ${4: "white"}
   		), 
   		header = argonDashHeader(), 
   		body = argonDashBody(),

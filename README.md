@@ -7,7 +7,7 @@ Copy and paste the snippet of your choice to your RStudio editor. Alternatively,
 ```r
 devtools::install_github("dgrtwo/snippr")
 library(snippr)
-snippets_install_github("RinteRface/snippets")
+snippets_install_github("RinteRface/snippets", language = "r")
 ```
 
 
